@@ -1,14 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import { Route, Routes } from 'react-router-dom'
+import Header from './components/header/Header'
+import Main from './page/Main/Main'
+import UpdateProduct from './page/Update/UpdateProduct'
+import Create from './page/Craete/Create'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>helloo</h1>
+     <Header/>
+     <Routes>
+      <Route path='/' element={<Main/>}/>
+      <Route path='/upDate/:id' element = {<UpdateProduct/>}/>
+      <Route path='/create' element = {<Create/>}/>
+     </Routes>
+        
+     
     </>
   )
 }
